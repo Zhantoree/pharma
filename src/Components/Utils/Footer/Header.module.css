@@ -1,0 +1,35 @@
+.header {
+
+}
+
+.container {
+    max-width: 1200px;
+    font-size: 1rem;
+    color: white;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.header:first-child {
+    height: 6vh;
+    background-color: var(--primary1);
+}
+
+.header_item {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.number img {
+    margin: 0.4rem auto;
+    height: 4vh;
+}
