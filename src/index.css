@@ -1,6 +1,6 @@
-:root {
+:root  {
   --primary1: #0152A8;
-  --primary2: #0FE3AF;
+  --primary2: #0fe3a7;
   --primary3: #143450;
   --secondary1: #DCEDFE;
   --secondary2: #E5F2EF;
@@ -13,13 +13,26 @@
   url("./assets/Fonts/Lato-Regular.ttf") format(".ttf");
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: local("Inter"),
+  url("./assets/Fonts/Inter-VariableFont_slnt,wght.ttf") format(".ttf");
+}
+
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Inter', sans-serif;
   width: 100vw;
   margin: 0 auto
 }
 
-
+.container {
+  max-width: 1170px;
+  font-size: 1rem;
+  padding: 0 15px;
+  color: white;
+  margin: 0 auto;
+  align-items: center;
+}
 
 * {
   margin: 0;

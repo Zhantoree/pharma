@@ -1,0 +1,17 @@
+.home {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+
+.home_item {
+    width: 100%;
+}
+
+.home_item img {
+    box-sizing: border-box;
+    width: 100%;
+    flex: 1 1 auto;
+    height: 100px;
+
+}

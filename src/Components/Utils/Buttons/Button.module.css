@@ -1,0 +1,16 @@
+/*Button*/
+.button {
+    background-color: var(--primary2);
+    color: black;
+    border: 0;
+    font-family: 'Inter', sans-serif;
+    width: 11.75rem;
+    height: 3.8125rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.button:hover {
+    background-color: #20c99a;
+    transition: 0.1s linear;
+}
