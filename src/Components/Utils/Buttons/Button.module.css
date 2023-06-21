@@ -1,16 +1,20 @@
 /*Button*/
 .button {
-    background-color: var(--primary2);
-    color: black;
+    background-color: var(--primary1);
+    color: white;
     border: 0;
     font-family: 'Inter', sans-serif;
-    width: 11.75rem;
-    height: 3.8125rem;
+    padding: 1rem 2.3125rem;
     font-size: 1.125rem;
     font-weight: 600;
 }
 
 .button:hover {
-    background-color: #20c99a;
-    transition: 0.1s linear;
+    background-color: var(--primary2);
+    color: black;
+    transition: 0.2s ;
+}
+.button:active {
+    background-color: var(--primary2);
+    transition: 0.2s linear;
 }
