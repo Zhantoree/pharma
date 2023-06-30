@@ -1,12 +1,13 @@
 import React from 'react';
-import s from "./Button.module.css";
+import s from "./Button.module.scss";
 
-const Button = (props) => {
+const Button = ({text, color = "default"}) => {
     return (
-        <div>
-            <button className={s.button}>{props.text}</button>
-        </div>
-    );
+        <>
+            <button className={color==='default' ? s.button : s.button_reverse}>{text}</button>
+        </>
+    )
+        ;
 };
 
 export default Button;
