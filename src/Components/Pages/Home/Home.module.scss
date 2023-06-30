@@ -1,0 +1,143 @@
+.container {
+    max-width: 1200px;
+    font-size: 1rem;
+    color: white;
+    margin: 0 auto ;
+    align-self: center;
+    text-align: left;
+}
+
+.banner {
+    display: flex;
+    align-content: center;
+    margin: 31px auto 150px;
+    width: 1745/1920 * 100%;
+    background:  url('../../../assets/Images/Homeimg.png') top center/cover no-repeat;
+    min-height: 761px;
+
+    &.container {
+
+    }
+
+    .banner__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        width: 530/1200 * 100%;
+
+        .banner__title {
+            margin-bottom: 15px;
+            color: #1C1C1C;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 142%;
+            letter-spacing: 6.64px;
+            text-transform: uppercase;
+        }
+
+        .banner__subtitle {
+            margin-bottom: 23px;
+            color: #143450;
+            font-size: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 114.5%;
+        }
+
+        .banner__text {
+            margin-bottom: 14px;
+            color: #1C1C1C;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 142%;
+        }
+        .banner__btn {
+            display: inline-block;
+        }
+    }
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+
+
+    .services__title {
+        text-align: center;
+        margin-bottom: 16px;
+        color: #1C1C1C;
+        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 142%;
+        letter-spacing: 5.81px;
+        text-transform: uppercase;
+    }
+    .services__subtitle {
+        margin-bottom: 24px;
+        color: #1C1C1C;
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        .card__column {
+            padding: 45px 30px;
+            width: 285px;
+
+            .card__image {
+                margin-bottom: 17px;
+            }
+
+
+            .card__title {
+                margin-bottom: 11px;
+                color: #1C1C1C;
+                font-size: 20px;
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 114.5%;
+            }
+
+            .card__text {
+                margin-bottom: 11px;
+                color: #545454;
+                font-size: 16px;
+                font-family: 'Lato', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 142%;
+            }
+            .card__subtext {
+                display: flex;
+                & p {
+                    margin-right: 8px;
+                    color: #363636;
+                    font-size: 16px;
+                    font-family: 'Inter', sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 160%;
+                }
+                & p.active {
+
+                }
+            }
+        }
+    }
+}
