@@ -1,0 +1,124 @@
+
+%headerAppear {
+  @keyframes headerAppear {
+    0% {
+      opacity: 0;
+      top: -15px;
+
+    }
+    100% {
+      opacity: 100%;
+      top: 0;
+    }
+  }
+  animation-name: headerAppear;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+
+
+/*Container*/
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  font-size: 1rem;
+  color: white;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  .number {
+    background-color: var(--primary1);
+    .container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .number__text {
+        color: #FFF;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+      }
+
+      .number__info {
+        display: flex;
+        flex-direction: row;
+        width: calc(451/1200 * 100%);
+        justify-content: space-between;
+
+        .number__phone, .number__email {
+          display: flex;
+          align-items: center;
+          align-content: center;
+          & span {
+            color: white;
+          }
+        }
+      }
+    }    
+  }
+
+  .nav {
+    .container {
+      padding: 39px 0 31px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .nav__logo {
+        display: flex;
+        align-items: center;
+
+        & p {
+          color: #1C1C1C;
+          font-size: 30px;
+          font-family: 'Inter', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 105%;
+        }
+      }
+
+      .nav__links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: calc(496/1200 * 100%);
+
+        .nav__link, .nav__link:visited {
+          display: flex;
+          align-items: center;
+          color: #1C1C1C;
+          font-size: 18px;
+          font-family: 'Inter', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+
+          & img {
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+

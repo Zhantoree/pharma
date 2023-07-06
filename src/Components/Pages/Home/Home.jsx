@@ -14,7 +14,6 @@ import Orth from '../../../assets/Icons/Orth.svg'
 const Home = () => {
     return (
         <div className={s.wrapper}>
-            <Header/>
             <div className={s.banner}>
                 <div className={s.container}>
                     <div className={s.banner__body}>
@@ -143,8 +142,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
-
         </div>
     );
 };

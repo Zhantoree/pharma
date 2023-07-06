@@ -13,7 +13,6 @@ import Footer from "../../Utils/Footer/Footer.jsx";
 const About = () => {
     return (
         <div className={s.wrapper}>
-            <Header/>
             <div className={s.banner}>
                 <div className={s.banner__image}>
                     <img src={bannerImg} alt="bannerImg"/>
@@ -127,7 +126,6 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
         </div>
     );
 };
