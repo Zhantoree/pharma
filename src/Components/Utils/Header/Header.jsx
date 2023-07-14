@@ -8,13 +8,23 @@ import {useState} from "react";
 import scrollDown from '../../../assets/Icons/scrollDown.svg'
 
 const Header = () => {
-    const [burgerType, setBurgerType] = useState(true)
-    const [navVisibility, setNavVisibility] = useState(true)
+    const [burgerActive, setBurgerActive] = useState(false);
     return (
         <>
+            <style>{burgerActive ? `                
+                body {
+                    position: fixed;
+                    height: 100vh;
+                    overflow: hidden;
+                }`
+                    :
+                    `                
+                body {
+                }`
+            }
+            </style>
             <div className={s.wrapper}>
-                <div className={s.header}>
-
+                <div className={burgerActive ? `${s.header} ${s.active}` : s.header}>
                     <div className={`${s.header__number} ${s.number}`}>
                         <div className={s.container}>
                             <div className={s.number__text}>Welcome to Pharma. We provides medical accessories</div>
@@ -32,36 +42,46 @@ const Header = () => {
                     </div>
                     <div className={`${s.header__nav} ${s.nav}`}>
                         <div className={s.container}>
-                            <NavLink to='/'>
-                            <div className={s.nav__logo}>
+                            <NavLink to='/' onClick={() => setBurgerActive(false)}>
+                                <div className={s.nav__logo}>
                                     <img src={Logo} alt="Logo"/>
                                     <p>Pharma</p>
-                            </div>
+                                </div>
                             </NavLink>
-                            <div className={s.nav__links}>
-                                <NavLink to="/" className={({isActive, isPending}) =>
-                                    isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
-                                }>Home</NavLink>
-                                <NavLink to="/about" className={({isActive, isPending}) =>
-                                    isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
-                                }>About</NavLink>
-                                <NavLink to="/services" className={({isActive, isPending}) =>
-                                    isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
-                                }>Services</NavLink>
-                                <NavLink to="/pages" className={({isActive, isPending}) =>
-                                    isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
-                                }>
+                            <div className={burgerActive ? `${s.nav__links} ${s.active}` : s.nav__links}>
+                                <NavLink to="/" onClick={() => setBurgerActive(false)}
+                                         className={({isActive, isPending}) =>
+                                             isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
+                                         }>Home</NavLink>
+                                <NavLink to="/about" onClick={() => setBurgerActive(false)}
+                                         className={({isActive, isPending}) =>
+                                             isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
+                                         }>About</NavLink>
+                                <NavLink to="/services" onClick={() => setBurgerActive(false)}
+                                         className={({isActive, isPending}) =>
+                                             isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
+                                         }>Services</NavLink>
+                                <NavLink to="/pages" onClick={() => setBurgerActive(false)}
+                                         className={({isActive, isPending}) =>
+                                             isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
+                                         }>
                                     Pages
                                     <img src={scrollDown} alt="scrollDown"/>
                                 </NavLink>
-                                <NavLink to="/contact" className={({isActive, isPending}) =>
-                                    isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
-                                }>Contact us</NavLink>
+                                <NavLink to="/contact" onClick={() => setBurgerActive(false)}
+                                         className={({isActive, isPending}) =>
+                                             isPending ? `${s.nav__link}` : isActive ? `${s.nav__link} ${s.active}` : `${s.nav__link}`
+                                         }>Contact us</NavLink>
                             </div>
-                            <div className={s.nav__btn}>
-                                <NavLink to="/home" className={s.nav__btn}>
+                            <div className={burgerActive ? `${s.nav__btn} ${s.active}` : s.nav__btn}>
+                                <NavLink to="/home" onClick={() => setBurgerActive(!burgerActive)}
+                                         className={s.nav__btn}>
                                     <Button text={"Appointment"}/>
                                 </NavLink>
+                            </div>
+                            <div className={burgerActive ? `${s.nav__burger} ${s.active}` : s.nav__burger}
+                                 onClick={() => setBurgerActive(!burgerActive)}>
+                                <span></span>
                             </div>
                         </div>
                     </div>

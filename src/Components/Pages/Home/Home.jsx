@@ -3,15 +3,27 @@ import s from "./Home.module.scss"
 import Button from "../../Utils/Buttons/Button.jsx";
 import Footer from "../../Utils/Footer/Footer.jsx";
 import homeImg from '../../../assets/Images/Homeimg.png'
-import Angi from '../../../assets/Icons/Angi.svg'
-import Brain from '../../../assets/Icons/Brain.svg'
-import Cardi from '../../../assets/Icons/Cardi.svg'
-import Dent from '../../../assets/Icons/Dent.svg'
-import Eye from '../../../assets/Icons/Eye.svg'
-import Plus from '../../../assets/Icons/+.svg'
-import Orth from '../../../assets/Icons/Orth.svg'
+import Card from "./Card/Card.jsx";
+import {useSelector} from "react-redux";
+import Paginate from "../../Utils/Paginate/Paginate.jsx";
+import {useState} from "react";
+import {paginate} from "../../../Helpers/Paginate.js";
+
 
 const Home = () => {
+    const cards = useSelector(state => state.home.cards)
+    const count = cards.length
+    const pageSize = 4;
+    const [currentPage, setCurrentPage] = useState(1)
+    const handlePageChange = (pageIndex) => {
+        setCurrentPage(pageIndex)
+        console.log(pageIndex)
+    }
+
+
+
+    let cardsCrop = paginate(cards, currentPage, pageSize)
+
     return (
         <div className={s.wrapper}>
             <div className={s.banner}>
@@ -35,109 +47,14 @@ const Home = () => {
                     <div className={s.services__title}>Services</div>
                     <div className={s.services__subtitle}>Feel Like Home With Best Medical Care</div>
                     <div className={`${s.services__card} ${s.card}`}>
-                        <div className={s.card__column}>
-                            <div className={s.card__image}>
-                                <img src={Angi} alt="Angi"/>
-                            </div>
-                            <div className={s.card__title}>Angioplasty</div>
-                            <div className={s.card__text}>Our team of highl professionals uses the latest heal
-                                echnologies health quickly and easily.
-                            </div>
-                            <div className={s.card__subtext}>
-                                <p>Read More</p>
-                                <img src={Plus} alt=""/>
-                            </div>
-                        </div>
-                        <div className={s.card__column}>
-                            <div className={s.card__image}>
-                                <img src={Cardi} alt="Cardi"/>
-                            </div>
-                            <div className={s.card__title}>Cardiology</div>
-                            <div className={s.card__text}>Our team of high professionals uses the latest heal
-                                echnologies health quickly and easily.
-                            </div>
-                            <div className={s.card__subtext}>
-                                <p>Read More</p>
-                                <img src={Plus} alt=""/>
-                            </div>
-                        </div>
-                        <div className={s.card__column}>
-                            <div className={s.card__image}>
-                                <img src={Dent} alt="Dent"/>
-                            </div>
-                            <div className={s.card__title}>Dental</div>
-                            <div className={s.card__text}>Our team of highl professionals uses the latest heal
-                                echnologies health quickly and easily.
-                            </div>
-                            <div className={s.card__subtext}>
-                                <p>Read More</p>
-                                <img src={Plus} alt=""/>
-                            </div>
-                        </div>
-                        <div className={s.card__column}>
-                            <div className={s.card__image}>
-                                <img src={Eye} alt="Eye"/>
-                            </div>
-                            <div className={s.card__title}>Eye Care</div>
-                            <div className={s.card__text}>Our team of highl professionals uses the latest heal
-                                echnologies health quickly and easily.
-                            </div>
-                            <div className={s.card__subtext}>
-                                <p>Read More</p>
-                                <img src={Plus} alt=""/>
-                            </div>
-                        </div>
-                        <div className={s.card__column}>
-                            <div className={s.card__image}>
-                                <img src={Brain} alt="Brain"/>
-                            </div>
-                            <div className={s.card__title}>Endocrinology</div>
-                            <div className={s.card__text}>Our team of highl professionals uses the latest heal
-                                echnologies health quickly and easily.
-                            </div>
-                            <div className={s.card__subtext}>
-                                <p>Read More</p>
-                                <img src={Plus} alt=""/>
-                            </div>
-                        </div>
-                        <div className={s.card__column}>
-                            <div className={s.card__image}>
-                                <img src={Orth} alt="Orth"/>
-                            </div>
-                            <div className={s.card__title}>Orthopaedics</div>
-                            <div className={s.card__text}>Our team of highl professionals uses the latest heal
-                                echnologies health quickly and easily.
-                            </div>
-                            <div className={s.card__subtext}>
-                                <p>Read More</p>
-                                <img src={Plus} alt=""/>
-                            </div>
-                        </div>
-                        <div className={s.card__column}>
-                            <div className={s.card__image}>
-                                <img src={Angi} alt="Angi"/>
-                            </div>
-                            <div className={s.card__title}></div>
-                            <div className={s.card__text}>Our team of highl professionals uses the latest heal
-                                echnologies health quickly and easily.
-                            </div>
-                            <div className={s.card__subtext}>
-                                <p>Read More</p>
-                                <img src={Plus} alt=""/>
-                            </div>
-                        </div>
-                        <div className={s.card__column}>
-                            <div className={s.card__image}>
-                                <img src={Brain} alt="Brain"/>
-                            </div>
-                            <div className={s.card__title}></div>
-                            <div className={s.card__text}>Our team of highl professionals uses the latest heal
-                                echnologies health quickly and easily.
-                            </div>
-                            <div className={s.card__subtext}>
-                                <p>Read More</p>
-                                <img src={Plus} alt=""/>
-                            </div>
+                        {cardsCrop.map(card =>
+                            <Card key={card.id} icon={card.icon} title={card.title} text={card.text}/>
+                        )}
+                        <div className={s.card__pages}>
+                            <Paginate pageSize={11}
+                                      onPageChange={handlePageChange}
+                                      currentPage={currentPage}
+                                      itemsCount={15}/>
                         </div>
                     </div>
                 </div>

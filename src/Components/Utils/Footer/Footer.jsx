@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Footer.module.scss'
 import Button from "../Buttons/Button.jsx";
 import logo from "../../../assets/Icons/logo.png"
@@ -7,7 +7,14 @@ import Mail from "../../../assets/Icons/Mail.svg"
 import Fb from "../../../assets/Icons/Fb.svg"
 import Insta from "../../../assets/Icons/Insta.svg"
 import Twiter from "../../../assets/Icons/Twiter.svg"
+import DropDown from "../../../assets/Icons/DropDown.svg"
+
+import Dropdown from "../Dropdown/Dropdown.jsx";
+import {useDispatch, useSelector} from "react-redux";
+
 const Footer = () => {
+    const dispatch = useDispatch();
+    const items = useSelector(state => state.utils.footer.dropdown.items)
     return (
         <>
             <div className={s.wrapper}>
@@ -42,23 +49,11 @@ const Footer = () => {
                         </div>
                         <div className={s.footer__body}>
                             <div className={s.footer__story}>“A Simple Story About
-                                The Doctorate Medical Center & Health Care Foundation</div>
-                            <div className={`${s.footer__list} ${s.list}`}>
-                                <div className={s.list__title}>Explore</div>
-                                <div className={s.list__item}>Home</div>
-                                <div className={s.list__item}>Services</div>
-                                <div className={s.list__item}>About us</div>
-                                <div className={s.list__item}>Testimonials</div>
-                                <div className={s.list__item}>News</div>
+                                The Doctorate Medical Center & Health Care Foundation
                             </div>
-                            <div className={`${s.footer__list} ${s.list}`}>
-                                <div className={s.list__title}>Uitility Pages</div>
-                                <div className={s.list__item}>Style Guide</div>
-                                <div className={s.list__item}>Change log</div>
-                                <div className={s.list__item}>Licenses</div>
-                                <div className={s.list__item}>Protected Page</div>
-                                <div className={s.list__item}>404 Page</div>
-                            </div>
+
+                            {items.map(item => <Dropdown item={item}/>)}
+
                             <div className={`${s.footer__app} ${s.app}`}>
                                 <div className={s.app__title}>Book an appointment</div>
                                 <div className={s.app__subtitle}>It is a long established fact that a reader will be distracted</div>

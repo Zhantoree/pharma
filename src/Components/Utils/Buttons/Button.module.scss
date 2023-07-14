@@ -80,10 +80,10 @@ h1,h2,h3,h4,h5,h6{
     color: white;
     border: 0;
     font-family: 'Inter', sans-serif;
-    @include adaptive-value('padding-top', 17, 12, 1);
-    @include adaptive-value('padding-left', 39, 12, 1);
-    @include adaptive-value('padding-right', 39, 12, 1);
-    @include adaptive-value('padding-bottom', 17, 12, 1);
+    @include adaptive-value('padding-top', 16, 12, 1);
+    @include adaptive-value('padding-left', 37, 12, 1);
+    @include adaptive-value('padding-right', 37, 12, 1);
+    @include adaptive-value('padding-bottom', 16, 12, 1);
     @include adaptive-font(16, 12);
 
     font-weight: 600;

@@ -1,0 +1,28 @@
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .page__item {
+    list-style: none;
+    border: 2px solid lightgray;
+    padding: 10px;
+    border-radius: 30%;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+      background-color: darkgray;
+    }
+
+    &:hover {
+      background-color: darkgray;
+    }
+  }
+
+
+  a.page__link {
+
+  }
+}

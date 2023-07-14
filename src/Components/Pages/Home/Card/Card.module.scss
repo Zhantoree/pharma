@@ -1,0 +1,48 @@
+
+.card__column {
+  padding: 45px 30px;
+  width: 285px;
+
+  .card__image {
+    margin-bottom: 17px;
+  }
+
+
+  .card__title {
+    margin-bottom: 11px;
+    color: #1C1C1C;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 114.5%;
+  }
+
+  .card__text {
+    margin-bottom: 11px;
+    color: #545454;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 142%;
+  }
+
+  .card__subtext {
+    display: flex;
+
+    & p {
+      margin-right: 8px;
+      color: #363636;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%;
+    }
+
+    & p.active {
+
+    }
+  }
+}

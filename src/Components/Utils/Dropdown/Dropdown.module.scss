@@ -1,0 +1,105 @@
+/*Обнуление*/
+
+$maxWidth: 1920;
+$maxWidthContainer: 1200;
+
+@mixin adaptive-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    // Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  } @else if $type==2 {
+    //Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+  } @else {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  }
+}
+
+
+@keyframes listVisible {
+  0% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  .list__title {
+    margin-bottom: 14px;
+    color: #1C1C1C;
+    //font-size: 20px;
+    @include adaptive-font(20, 32);
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 114.5%;
+
+    & img {
+      display: none;
+    }
+  }
+
+  .list__item {
+    color: #545454;
+    font-size: 16px;
+    @include adaptive-font(16, 28);
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+  }
+
+}
+
+@media screen and (max-width: 767px){
+
+  .list {
+    width: 100vw;
+    margin: 0 auto;
+    .list__title {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      & img {
+        display: inline-block;
+        margin-left: 3px;
+      }
+    }
+    .list__item {
+      cursor: pointer;
+      display: none;
+      transition: all 0.3s ease;
+      //transform: translateY(3px);
+      position: relative;
+    }
+    .list__item.active {
+      display: block;
+      transition: all 0.3s ease;
+
+
+    }
+
+  }
+
+}
