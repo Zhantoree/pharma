@@ -1,13 +1,19 @@
-import * as path from "path";
+import path from "path";
+
 import Angi from '../../assets/Icons/Angi.svg'
 import Brain from '../../assets/Icons/Brain.svg'
 import Cardi from '../../assets/Icons/Cardi.svg'
 import Dent from '../../assets/Icons/Dent.svg'
 import Eye from '../../assets/Icons/Eye.svg'
-import Plus from '../../assets/Icons/+.svg'
 import Orth from '../../assets/Icons/Orth.svg'
 
-const initialState = {
+interface homeState {
+    doctors: any[],
+    feedbacks: any[],
+    cards: any[],
+}
+
+const initialState: homeState = {
     doctors: [
         {
             name: "Vanseena Adams",
