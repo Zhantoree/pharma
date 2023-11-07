@@ -1,0 +1,264 @@
+.services .container, .banner .container {
+  display: flex;
+  max-width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .services .container, .banner .container {
+    padding-right: calc(8px + 7 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .services .container, .banner .container {
+    padding-left: calc(8px + 7 * ((100vw - 320px) / 880));
+  }
+}
+
+.banner {
+  display: flex;
+  align-content: center;
+  margin: 31px auto 150px;
+  margin-top: 31px;
+  margin-bottom: 31px;
+  width: 100%;
+  flex-grow: 1;
+  min-height: 500px;
+  background-image: url("../../../assets/Images/Homeimg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+@media (max-width: 1200px) {
+  .banner {
+    margin-top: calc(15px + 16 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .banner {
+    margin-bottom: calc(15px + 16 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    background-image: none;
+    min-height: auto;
+  }
+}
+.banner .container {
+  align-self: center;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .banner .container {
+    justify-content: center;
+  }
+}
+.banner .container .banner__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  width: 40%;
+  justify-self: flex-start;
+}
+@media (max-width: 768px) {
+  .banner .container .banner__body {
+    width: 80%;
+  }
+}
+.banner .container .banner__body .banner__title {
+  margin-bottom: 15px;
+  color: #1C1C1C;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 1600));
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142%;
+  letter-spacing: 6.64px;
+  text-transform: uppercase;
+}
+.banner .container .banner__body .banner__subtitle {
+  margin-bottom: 23px;
+  color: #143450;
+  font-size: calc(20px + 30 * ((100vw - 320px) / 1600));
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 114.5%;
+}
+.banner .container .banner__body .banner__text {
+  margin-bottom: 14px;
+  color: #1C1C1C;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142%;
+}
+.banner .container .banner__body .banner__btn {
+  display: inline-block;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+}
+.services .container {
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+@media (max-width: 1200px) {
+  .services .container {
+    margin-bottom: calc(20px + 20 * ((100vw - 320px) / 880));
+  }
+}
+.services .container .services__title {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #1C1C1C;
+  width: 80%;
+  font-size: calc(12px + 2 * ((100vw - 320px) / 1600));
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142%;
+  letter-spacing: 5.81px;
+  text-transform: uppercase;
+}
+@media (max-width: 1200px) {
+  .services .container .services__title {
+    margin-bottom: calc(8px + 8 * ((100vw - 320px) / 880));
+  }
+}
+.services .container .services__subtitle {
+  width: 80%;
+  margin-bottom: 24px;
+  color: #1C1C1C;
+  text-align: center;
+  font-size: 30px;
+  font-size: calc(20px + 10 * ((100vw - 320px) / 1600));
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+@media (max-width: 1200px) {
+  .services .container .services__subtitle {
+    margin-bottom: calc(12px + 12 * ((100vw - 320px) / 880));
+  }
+}
+.services .container .card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.services .container .card .card__column {
+  padding: 45px 30px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 285px;
+}
+@media (max-width: 1200px) {
+  .services .container .card .card__column {
+    padding-top: calc(20px + 25 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .services .container .card .card__column {
+    padding-bottom: calc(20px + 25 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .services .container .card .card__column {
+    padding-left: calc(15px + 15 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .services .container .card .card__column {
+    padding-right: calc(15px + 15 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 992px) {
+  .services .container .card .card__column {
+    width: 30%;
+    text-align: justify;
+    word-wrap: break-word;
+  }
+}
+@media (max-width: 768px) {
+  .services .container .card .card__column {
+    width: 45%;
+  }
+}
+@media (max-width: 552px) {
+  .services .container .card .card__column {
+    width: 90%;
+  }
+}
+.services .container .card .card__column .card__image {
+  margin-bottom: 17px;
+}
+@media (max-width: 552px) {
+  .services .container .card .card__column .card__image {
+    display: flex;
+    justify-content: center;
+  }
+}
+.services .container .card .card__column .card__title {
+  margin-bottom: 11px;
+  color: #1C1C1C;
+  font-size: calc(14px + 6 * ((100vw - 320px) / 1600));
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 114.5%;
+}
+@media (max-width: 1200px) {
+  .services .container .card .card__column .card__title {
+    margin-bottom: calc(8px + 3 * ((100vw - 320px) / 880));
+  }
+}
+.services .container .card .card__column .card__text {
+  margin-bottom: 11px;
+  color: #545454;
+  font-size: 16px;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 1600));
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142%;
+}
+@media (max-width: 1200px) {
+  .services .container .card .card__column .card__text {
+    margin-bottom: calc(8px + 3 * ((100vw - 320px) / 880));
+  }
+}
+.services .container .card .card__column .card__subtext {
+  display: flex;
+  justify-content: space-between;
+}
+.services .container .card .card__column .card__subtext p {
+  margin-bottom: 8px;
+  color: #363636;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 1600));
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+}
+@media (max-width: 1200px) {
+  .services .container .card .card__column .card__subtext p {
+    margin-bottom: calc(5px + 3 * ((100vw - 320px) / 880));
+  }
+}
+.services .container .card .card__pages {
+  width: 40%;
+  margin-bottom: 115px;
+}
+
+/*# sourceMappingURL=Home.module.css.map */

@@ -1,0 +1,166 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: black;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+  color: black;
+}
+
+/*--------------------*/
+/*Button*/
+.button {
+  background-color: var(--primary1);
+  color: white;
+  border: 0;
+  font-family: "Inter", sans-serif;
+  padding-top: 16px;
+  padding-left: 37px;
+  padding-right: 37px;
+  padding-bottom: 16px;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 1600));
+  font-weight: 600;
+}
+@media (max-width: 1170px) {
+  .button {
+    padding-top: calc(12px + 4 * ((100vw - 320px) / 850));
+  }
+}
+@media (max-width: 1170px) {
+  .button {
+    padding-left: calc(12px + 25 * ((100vw - 320px) / 850));
+  }
+}
+@media (max-width: 1170px) {
+  .button {
+    padding-right: calc(12px + 25 * ((100vw - 320px) / 850));
+  }
+}
+@media (max-width: 1170px) {
+  .button {
+    padding-bottom: calc(12px + 4 * ((100vw - 320px) / 850));
+  }
+}
+.button:hover {
+  background-color: var(--primary2);
+  color: black;
+  transition: 0.2s;
+}
+.button:active {
+  background-color: var(--primary2);
+  transition: 0.2s linear;
+}
+
+.button_reverse {
+  background-color: white;
+  color: black;
+  border: 0;
+  font-family: "Inter", sans-serif;
+  padding-top: 17px;
+  padding-left: 39px;
+  padding-right: 39px;
+  padding-bottom: 17px;
+  font-size: calc(14px + 2 * ((100vw - 320px) / 1600));
+  font-weight: 600;
+}
+@media (max-width: 1170px) {
+  .button_reverse {
+    padding-top: calc(12px + 5 * ((100vw - 320px) / 850));
+  }
+}
+@media (max-width: 1170px) {
+  .button_reverse {
+    padding-left: calc(12px + 27 * ((100vw - 320px) / 850));
+  }
+}
+@media (max-width: 1170px) {
+  .button_reverse {
+    padding-right: calc(12px + 27 * ((100vw - 320px) / 850));
+  }
+}
+@media (max-width: 1170px) {
+  .button_reverse {
+    padding-bottom: calc(12px + 5 * ((100vw - 320px) / 850));
+  }
+}
+.button_reverse:hover {
+  background-color: var(--primary2);
+  color: black;
+  transition: 0.2s;
+}
+.button_reverse:active {
+  background-color: var(--primary2);
+  transition: 0.2s linear;
+}
+
+/*# sourceMappingURL=Button.module.css.map */

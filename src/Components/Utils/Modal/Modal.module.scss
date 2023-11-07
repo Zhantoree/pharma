@@ -1,0 +1,227 @@
+/*Обнуление*/
+
+$maxWidth: 1920;
+$maxWidthContainer: 1170;
+
+@mixin adaptive-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin adaptive-value($property, $startSize, $minSize, $type){
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    // Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  } @else if $type==2 {
+    //Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+  }
+  // всегда
+  @else {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  }
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: black;
+}
+*,*:before,*:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;color: black;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{
+  font-size:inherit;
+  font-weight: 400;
+  color:black;
+}
+/*--------------------*/
+
+.container {
+
+  max-width: 1200px;
+  padding: 20px;
+  font-size: 1rem;
+  color: white;
+  margin: 0 auto;
+  align-items: center;
+
+}
+
+.modal {
+  max-width: 100%;
+  height: 100%;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  background-color:rgba(0,0,0,0.4);
+  transform: scale(0);
+
+  &.active {
+    transform: scale(1);
+
+    overflow-y: hidden;
+  }
+
+  @media screen {
+    
+  }
+  .container {
+    background-color: #DCEDFE;
+    display: flex;
+    flex-direction: row;
+
+    .modal__image {
+      width: calc(468/1200 * 100%);
+      flex: 1 1 auto;
+
+      @media (max-width: 992px) {
+        position: absolute;
+        display: none;
+      }
+
+      & img {
+        max-width: 100%;
+        @include adaptive-value('height', 860, 600, 1);
+        object-fit: cover;
+      }
+    }
+
+    .modal__body {
+      display: flex;
+      max-width: 100%;
+      width: calc(673/1200 * 100%);
+
+      flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: center;
+
+      @include adaptive-value('height', 860, 600, 1);
+
+      //margin-left: 20px;
+      @include adaptive-value('margin-left', 20, 0, 1);
+      //padding: calc(68/16 * 1em) calc(72/16 * 1em);
+      @include adaptive-value('padding-top', 68, 40, 1);
+      @include adaptive-value('padding-bottom', 68, 40, 1);
+      @include adaptive-value('padding-left', 72, 40, 1);
+      @include adaptive-value('padding-right', 72, 40, 1);
+      background-color: #FFFFFF;
+
+      @media (max-width: 992px) {
+        display: flex;
+        flex: 1 1 auto;
+        text-align: center;
+      }
+
+      .modal__title {
+        color: #1C1C1C;
+        @include adaptive-font(40,28);
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 114.5%;
+        @include adaptive-value('margin-bottom', 22, 5, 1);
+      }
+
+      .modal__text {
+        color: #545454;
+        @include adaptive-font(16, 14);
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 142%;
+        padding-bottom: 22px;
+      }
+
+      .modal__inputs {
+        @include adaptive-font(16, 12);
+        input {
+          height: calc(60/900 * 100%);
+        }
+        .modal__textarea {
+          width: 100%;
+          max-height: 150px;
+          margin-bottom: 20px;
+          @include adaptive-value('padding-top', 17, 12, 1);
+          @include adaptive-value('padding-bottom', 17.5, 12, 1);
+          @include adaptive-value('padding-left', 32, 12, 1);
+          border: 1px solid #DCDCDC;
+
+        }
+        button {
+          display: block;
+          width: 100%;
+        }
+      }
+
+    }
+
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
