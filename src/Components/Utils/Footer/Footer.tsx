@@ -8,6 +8,7 @@ import Insta from "../../../assets/Icons/Insta.svg";
 import Twiter from "../../../assets/Icons/Twiter.svg";
 import Dropdown from "../Dropdown/Dropdown";
 import {useAppSelector} from "../../../hooks/Hooks";
+import {memo} from "react";
 
 const Footer = () => {
     const items = useAppSelector(state => state.utils.footer.dropdown.items)
@@ -48,7 +49,7 @@ const Footer = () => {
                                 The Doctorate Medical Center & Health Care Foundation
                             </div>
                             <div className={s.footer__dropdown}>
-                                {items.map(item => <Dropdown item={item}/>)}
+                                {items.map(item => <Dropdown key={item.id} item={item}/>)}
                             </div>
                             <div className={`${s.footer__app} ${s.app}`}>
                                 <div className={s.app__title}>Book an appointment</div>
@@ -74,4 +75,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default memo(Footer);

@@ -1,11 +1,13 @@
 import {FC, useState} from 'react';
 import s from './Dropdown.module.scss'
+import {id} from "postcss-selector-parser";
 
 interface DropdownProps {
     item: {
         title: string,
         icon: string,
-        elements: string[]
+        elements: string[],
+        id: number
     }
 }
 
@@ -22,7 +24,7 @@ const Dropdown: FC<DropdownProps> = ({item}) => {
                     <img src={item.icon} alt="icon"/>
                 </div>
                 {item.elements.map((item) =>
-                    <div className={listActive ? `${s.list__item} ${s.active}` : s.list__item}>
+                    <div key={item} className={listActive ? `${s.list__item} ${s.active}` : s.list__item}>
                         {item}
                     </div>
                 )}

@@ -1,9 +1,11 @@
-import Home from "./Components/Pages/Home/Home";
 import {Route, Routes} from "react-router";
-import About from "./Components/Pages/About/About";
-import Header from "./Components/Utils/Header/Header";
-import Footer from "./Components/Utils/Footer/Footer";
-import Services from "./Components/Pages/Services/Services";
+import {lazy, Suspense} from 'react'
+// import Home from "./Components/Pages/Home/Home";
+const Home = lazy(() => import("./Components/Pages/Home/Home"));
+const About = lazy(() => import("./Components/Pages/About/About"));
+const Header = lazy(() => import("./Components/Utils/Header/Header"))
+const Footer = lazy(() => import("./Components/Utils/Footer/Footer"))
+const Services = lazy(() => import("./Components/Pages/Services/Services"))
 
 
 function App() {
@@ -12,11 +14,24 @@ function App() {
         <>
             <Header/>
             <Routes>
-                <Route path={"/"} element={<Home/>}/>
-                <Route path={"/about"} element={<About/>}/>
-                <Route path={"/services"} element={<Services/>}/>
+                <Route path={"/"}  element={
+                    <Suspense fallback={<>Loading page...</>}>
+                        <Home/>
+                    </Suspense>
+                }/>
+                <Route path={"/about"} element={
+                    <Suspense fallback={<>Loading page...</>}>
+                        <About/>
+                    </Suspense>
+                }/>
+                <Route path={"/services"} element={
+                    <Suspense fallback={<>Loading page...</>}>
+                        <Services/>
+                    </Suspense>
+                }/>
             </Routes>
             <Footer/>
         </>)
 }
+
 export default App

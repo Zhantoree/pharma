@@ -1,6 +1,6 @@
 import s from "../Home.module.scss";
 import Plus from "../../../../assets/Icons/+.svg";
-import  {FC} from "react";
+import {FC, memo} from "react";
 
 interface CardProps {
     icon: string;
@@ -27,4 +27,4 @@ const Card: FC<CardProps> = ({icon, title, text}) => {
     );
 };
 
-export default Card;
+export default memo(Card);

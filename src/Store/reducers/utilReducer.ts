@@ -7,11 +7,13 @@ const initialState = {
             items: [
                 {
                     title: "Explore",
+                    id: 0,
                     elements: ['Home','Services','About us','Testimonials','News'],
                     icon: Dropdown
                 },
                 {
                     title: "Utility Pages",
+                    id: 1,
                     elements: ['Style Guide','Changelog','Licenses','Protected Page','404 Page'],
                     icon: Dropdown
 

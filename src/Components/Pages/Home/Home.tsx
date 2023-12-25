@@ -3,22 +3,21 @@ import Button from "../../Utils/Buttons/Button";
 import Card from "./Card/Card";
 import {Card as CardType} from '../../../types/home'
 import Paginate from "../../Utils/Paginate/Paginate";
-import {FC, ReactNode, useState} from "react";
+import {FC, ReactNode, useState, memo, useCallback} from "react";
 import {paginate} from "../../../Helpers/Paginate";
 import {useAppSelector} from "../../../hooks/Hooks";
 
-interface HomeProps {
-    children?: ReactNode
-}
 
 
-const Home:FC<HomeProps> = () => {
+
+const Home = () => {
+    console.log("Home rerender")
     const cards = useAppSelector(state => state.home.cards)
     const pageSize = 4;
     const [currentPage, setCurrentPage] = useState<number>(1)
-    const handlePageChange = (pageIndex:number): void => {
+    const handlePageChange = useCallback((pageIndex:number): void => {
         setCurrentPage(pageIndex)
-    }
+    }, [])
 
 
 
@@ -63,4 +62,4 @@ const Home:FC<HomeProps> = () => {
     );
 };
 
-export default Home;
+export default memo(Home);

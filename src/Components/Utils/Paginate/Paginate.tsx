@@ -1,5 +1,5 @@
 import s from './Paginate.module.scss'
-import {FC} from "react";
+import {FC, memo} from "react";
 
 interface PaginateProps {
     itemsCount: number,
@@ -29,4 +29,4 @@ const Paginate:FC<PaginateProps> = ({itemsCount, pageSize, onPageChange, current
     );
 };
 
-export default Paginate;
+export default memo(Paginate);
