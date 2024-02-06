@@ -1,0 +1,53 @@
+.doctor__card .doctor__name {
+  font-size: calc(14px + 10 * ((100vw - 320px) / 1600));
+  font-weight: 600;
+}
+
+.doctor__card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #004A99;
+  padding: 40px;
+}
+@media (max-width: 1200px) {
+  .doctor__card {
+    padding: calc(30px + 10 * ((100vw - 320px) / 880));
+  }
+}
+.doctor__card .doctor__image {
+  width: 80%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding-bottom: 24px;
+}
+@media (max-width: 1200px) {
+  .doctor__card .doctor__image {
+    padding-bottom: calc(10px + 14 * ((100vw - 320px) / 880));
+  }
+}
+.doctor__card .doctor__name {
+  font-size: calc(16px + 4 * ((100vw - 320px) / 1600));
+  color: var(--secondary1);
+  padding-bottom: 12px;
+}
+@media (max-width: 1200px) {
+  .doctor__card .doctor__name {
+    padding-bottom: calc(6px + 6 * ((100vw - 320px) / 880));
+  }
+}
+.doctor__card .doctor__prof {
+  font-size: calc(14px + 4 * ((100vw - 320px) / 1600));
+  color: var(--secondary1);
+  padding-bottom: 24px;
+}
+@media (max-width: 1200px) {
+  .doctor__card .doctor__prof {
+    padding-bottom: calc(10px + 14 * ((100vw - 320px) / 880));
+  }
+}
+
+/*# sourceMappingURL=DoctorCard.module.css.map */

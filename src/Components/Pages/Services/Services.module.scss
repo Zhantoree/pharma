@@ -1,21 +1,32 @@
+@import '../../../mixins';
+
 /*Обнуление*/
-*{
+* {
   padding: 0;
   margin: 0;
   border: 0;
   color: black;
 }
-*,*:before,*:after{
+
+*, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
 
-nav,footer,header,aside{display: block;}
+:focus, :active {
+  outline: none;
+}
 
-html,body{
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
   font-family: 'Inter', sans-serif;
   width: 100%;
   margin: 0 auto;
@@ -26,19 +37,254 @@ html,body{
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-input,button,textarea{font-family:inherit;}
 
-input::-ms-clear{display: none;}
-button{cursor: pointer;}
-button::-moz-focus-inner {padding:0;border:0;}
-a, a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style: none;}
-img{vertical-align: top;}
-
-h1,h2,h3,h4,h5,h6{
-  font-size:inherit;
-  font-weight: 400;
-  color:black;
+input, button, textarea {
+  font-family: inherit;
 }
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+  color: black;
+}
+
 /*--------------------*/
+
+
+.wrapper {
+
+  .serv__banner {
+    background: url("../../../assets/Images/serviceBanner.jpg") center/cover no-repeat;
+    min-height: 400px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptive-value('margin-bottom', 50, 10, 1);
+
+    .serv__header {
+      @extend %title-font-size;
+      @include adaptive-font(40, 28);
+      line-height: 114.5%;
+    }
+  }
+
+  .hours {
+    background: url("../../../assets/Images/hoursService.jpg") center/cover no-repeat;
+    @include adaptive-value('min-height', 600, 200, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .hours__body {
+      width: 25%;
+      background: #FFFFFF;
+      padding: 2rem;
+      text-align: center;
+
+      @media (max-width: 1200px) {
+        width: 25%;
+      }
+      @media (max-width: 992px) {
+        width: 40%;
+      }
+      @media (max-width: 576px) {
+        width: 60%;
+      }
+      @media (max-width: 320px) {
+        width: 90%;
+      }
+
+      .hours__suptitle {
+        line-height: 142%;
+        @extend %text-font-size;
+      }
+
+      .hours__title {
+        line-height: 130%;
+        @extend %title-font-size;
+        @include adaptive-font(26, 22);
+      }
+
+      .hours__subtitle {
+        line-height: 142%;
+        @extend %text-font-size;
+        color: var(--primary3);
+      }
+    }
+  }
+
+
+  .doctors {
+    width: 100%;
+    background-color: var(--primary1);
+    @include adaptive-value('padding-top', 120, 30, 1);
+    @include adaptive-value('padding-bottom', 120, 30, 1);
+
+    .container {
+      @extend %default-container;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .doctors__header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      @include adaptive-value('margin-bottom', 20, 10, 1);
+
+      @media (max-width: 320px) {
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        width: 80%;
+      }
+      @media (max-width: 992px) {
+        width: 70%;
+      }
+
+      .crew {
+        line-height: 130%;
+        @include adaptive-font(30, 24);
+        font-weight: 700;
+        color: var(--secondary1);
+
+        .team {
+          font-weight: 500;
+          @include adaptive-font(20, 12);
+          line-height: 142%;
+          letter-spacing: 5px;
+          color: var(--secondary1);
+
+        }
+      }
+
+    }
+
+    .doctors__body {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 320px) {
+      }
+      @media (max-width: 992px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 25%;
+        @include adaptive-value('margin-bottom', 20, 10, 1);
+
+        @media (max-width: 320px) {
+          width: 100%;
+        }
+
+        @media (max-width: 768px) {
+          width: 80%;
+        }
+        @media (max-width: 992px) {
+          width: 70%;
+        }
+      }
+    }
+
+    hr {
+      background-color: var(--secondary3);
+      @include adaptive-value('margin-top', 100, 30, 1);
+      width: 100%;
+      height: 1px;
+    }
+
+    .doctors__footer {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+      }
+      @media (max-width: 992px) {
+        @include adaptive-font(12, 24);
+
+      }
+
+
+      p {
+        color: var(--secondary1);
+        @include adaptive-font(14, 12);
+        font-weight: 500;
+        font-family: "Lato", sans-serif;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        text-align: center;
+        word-wrap: break-word;
+        @include adaptive-value('margin-top', 40, 15, 1);
+
+
+        span {
+          font-family: 'Montserrat', sans-serif;
+          color: var(--secondary1);
+          font-weight: 600;
+          @include adaptive-font(50, 24);
+          margin-top: 14px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

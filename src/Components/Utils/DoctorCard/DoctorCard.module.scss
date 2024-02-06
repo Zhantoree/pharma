@@ -1,0 +1,40 @@
+@import '../../../mixins';
+
+.doctor__card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #004A99;
+  @include adaptive-value('padding', 40, 30, 1);
+
+  .doctor__image {
+    width: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    @include adaptive-value("padding-bottom", 24, 10, 1);
+  }
+
+  .doctor__name {
+    @extend %title-font-size;
+    @include adaptive-font(20, 16);
+    color: var(--secondary1);
+    @include adaptive-value("padding-bottom", 12, 6, 1);
+
+  }
+  .doctor__prof {
+    @include adaptive-font(18, 14);
+    color: var(--secondary1);
+    @include adaptive-value("padding-bottom", 24, 10, 1);
+
+  }
+}
+
+
+
+
+
+
+

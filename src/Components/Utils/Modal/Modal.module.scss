@@ -154,13 +154,45 @@ h1,h2,h3,h4,h5,h6{
       }
 
       .modal__title {
-        color: #1C1C1C;
-        @include adaptive-font(40,28);
-        font-family: 'Montserrat', sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 114.5%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        p {
+          color: #1C1C1C;
+          @include adaptive-font(40,28);
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 114.5%;
+          text-align: left;
+        }
         @include adaptive-value('margin-bottom', 22, 5, 1);
+
+        .modal__close {
+          width: 100%;
+          height: 100%;
+          span {
+            position: absolute;
+            background-color: #5b5b5b;
+            width: 20px;
+            right: 0;
+            bottom: 0;
+            top: 13px;
+            transform: rotate(45deg) scale(1.5);
+            height: 2px;
+
+            &:after {
+              content: "";
+              position: absolute;
+              background-color: #5b5b5b;
+              width: 20px;
+              right: 0;
+              bottom: 0;
+              transform: rotate(90deg) scale(1);
+              height: 2px;
+            }
+          }
+        }
       }
 
       .modal__text {

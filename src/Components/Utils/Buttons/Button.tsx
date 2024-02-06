@@ -2,17 +2,17 @@ import {ComponentPropsWithoutRef, FC} from 'react';
 import s from "./Button.module.scss";
 
 
-interface Button extends ComponentPropsWithoutRef<"button">{
+interface ButtonProps extends ComponentPropsWithoutRef<"button">{
     text: string,
     color?: string,
-
+    className?: string
 }
 
-const Button: FC<Button> = ({text, color = "default", ...props}) => {
+const Button: FC<ButtonProps> = ({text, className, color = "default", ...props}) => {
 
     return (
         <>
-            <button  {...props} className={color==='default' ? s.button : s.button_reverse}>{text}</button>
+            <button className={color==='default' ? `${s.button} ${className}` : `${s.button_reverse} ${className}`} {...props}>{text}</button>
         </>
     )
         ;

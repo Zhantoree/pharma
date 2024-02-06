@@ -12,6 +12,7 @@ interface ModalProps {
 }
 
 const Modal:FC<ModalProps> = ({active, setActive}) => {
+
     const [name, setName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [phone, setPhone] = useState<string>('')
@@ -24,7 +25,14 @@ const Modal:FC<ModalProps> = ({active, setActive}) => {
                     <img src={modalImg} alt="modalImg"/>
                 </div>
                 <div className={s.modal__body}>
-                    <div className={s.modal__title}>Book an appoinment</div>
+                    <div className={s.modal__title}>
+                        <p>                        Book an appoinment
+                        </p>
+                        <div className={s.modal__close}>
+                            <span onClick={() => setActive(false)}></span>
+
+                        </div>
+                    </div>
                     <div className={s.modal__text}>Lorem Ipsum is simply dummy text of  printing and typesetting industry standard dummy text the with the release.</div>
                     <form className={s.modal__inputs}>
                         <Input type="text" required="true" setValue={setName} value={name} name="name" placeholder={"Name"}/>
